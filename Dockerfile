@@ -37,6 +37,7 @@ COPY --from=builder /usr/bin/flake8    /usr/bin/flake8
 COPY --from=builder /usr/bin/molecule  /usr/bin/molecule
 COPY --from=builder /usr/bin/pytest    /usr/bin/pytest
 COPY --from=builder /usr/bin/yamllint  /usr/bin/yamllint
+COPY --from=builder /usr/bin/ansible-lint  /usr/bin/ansible-lint
 
 RUN set -eux \
 	&& apk add --no-cache \
