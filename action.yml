@@ -1,0 +1,56 @@
+---
+name: Test Ansible with Molecule
+description: 'Github Action for testing ansible with Molecule.'
+author: Arillso Tean <team@arillso.io>
+
+inputs:
+  command:
+    description: |
+      Commands:
+        check        Use the provisioner to perform a Dry-Run...
+        cleanup      Use the provisioner to cleanup any changes...
+        converge     Use the provisioner to configure instances...
+        create       Use the provisioner to start the instances.
+        dependency   Manage the role's dependencies.
+        destroy      Use the provisioner to destroy the instances.
+        idempotence  Use the provisioner to configure the...
+        init         Initialize a new role or scenario.
+        lint         Lint the role.
+        list         Lists status of instances.
+        login        Log in to one instance.
+        matrix       List matrix of steps used to test instances.
+        prepare      Use the provisioner to prepare the instances...
+        side-effect  Use the provisioner to perform side-effects...
+        syntax       Use the provisioner to syntax check the role.
+        test         Test (lint, cleanup, destroy, dependency,...
+        verify       Run automated tests against instances.
+    required: false
+    default: 'test'
+
+  scenario:
+    description: |
+      Arguments:
+        --scenario-name foo  Targeting a specific scenario.
+        --driver-name foo    Targeting a specific driver.
+        --all                Target all scenarios.
+        --destroy=always     Always destroy instances at the conclusion of a Molecule run.
+    required: false
+
+  working_directory:
+    description: |
+      Path to another directory in the repository, where molecule command will be issued from.
+      Useful in those cases where Ansible roles are not in git repository root.
+    required: false
+    default: ${{ github.repository }}
+
+runs:
+  using: docker
+  image: 'docker://ghcr.io/arillso/molecule'
+  env:
+    WORKING_DIRECTORY: ${{ inputs.working_directory }}
+    COMMAND: ${{ inputs.command }}
+    SCENARIO: ${{ inputs.scenario }}
+
+branding:
+  icon: play
+  color: gray-dark
