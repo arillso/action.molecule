@@ -48,6 +48,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             arillso/molecule:latest
-            arillso/molecule:${{ github.ref }}
+            arillso/molecule:${GITHUB_REF#refs/tags/}
             ghcr.io/arillso/molecule:latest
-            ghcr.io/arillso/molecule:${{ github.ref }}
+            ghcr.io/arillso/molecule:${GITHUB_REF#refs/tags/}
