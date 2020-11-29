@@ -8,6 +8,12 @@ repository:
   # A short description of the repository that will show up on GitHub
   description: Github Action for testing ansible with Molecule.
 
+  # A URL with more information about the repository
+  homepage: https://github.com/marketplace/actions/test_ansible_with_molecule
+
+  # A comma-separated list of topics to set on the repository
+  topics: action, ansible, molecule, test, testing
+
   # Either `true` to make the repository private, or `false` to make it public.
   private: false
 

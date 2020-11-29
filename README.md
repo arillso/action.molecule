@@ -26,7 +26,7 @@ The molecule scenario to run.
 
 ```yaml
 - name: Test Ansible with Molecule
-  uses: arillso/action.molecule@master
+  uses: arillso/action.molecule@0.0.1
   with:
     command: test
     working_directory: ${{ github.repository }}
