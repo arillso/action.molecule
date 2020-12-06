@@ -8,6 +8,7 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Bump molecule-vagrant from 0.5 to 0.6
+- Bump ansible from 2.10.3 to 2.10.4
 
 ## 0.0.1
 
