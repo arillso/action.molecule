@@ -5,6 +5,10 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## master
 
+### Changed
+
+- Bump molecule-vagrant from 0.5 to 0.6
+
 ## 0.0.1
 
 ### Added
