@@ -24,7 +24,7 @@ RUN apk --update --no-cache add --virtual \
 COPY requirements.txt /requirements.txt 
 
 RUN set -eux \
-	&& pip3 install --ignore-installed  --upgrade -r /requirements.txt \
+	&& pip3 install --ignore-installed --no-cache-dir --upgrade -r /requirements.txt \
 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
 
