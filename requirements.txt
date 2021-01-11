@@ -12,5 +12,5 @@ molecule-lxd===0.1
 molecule-openstack==0.2
 molecule-podman==0.3.0
 molecule-vagrant==0.6
-molecule[docker,podman,windows,lint]==3.2.0
+molecule[docker,podman,windows,lint]==3.2.2
 testinfra==6.0.0
