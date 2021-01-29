@@ -1,4 +1,4 @@
-FROM alpine:3.12.1 as builder
+FROM alpine:3.13.1 as builder
 
 RUN apk --update --no-cache add \
 	gcc \
@@ -28,7 +28,7 @@ RUN set -eux \
 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
 
-FROM alpine:3.12.1
+FROM alpine:3.13.1
 
 COPY --from=builder /usr/lib/python3.8/site-packages/ /usr/lib/python3.8/site-packages/
 COPY --from=builder /usr/bin/ansible /usr/bin/ansible
