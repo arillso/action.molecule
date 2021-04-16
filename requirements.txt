@@ -1,6 +1,6 @@
 ansible-lint==4.3.7
 ansible==2.10.4
-flake8==3.8.4 
+flake8==3.9.1 
 molecule-azure==0.5.0
 molecule-containers==0.2
 molecule-digitalocean==0.1
