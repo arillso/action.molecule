@@ -22,7 +22,7 @@ RUN apk --update --no-cache add --virtual \
 	py3-pip \
 	rust \
 	cargo \
-	libxml2
+	libxslt-dev
 
 COPY requirements.txt /requirements.txt 
 
