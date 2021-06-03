@@ -1,4 +1,4 @@
-FROM alpine:3.12.1 as builder
+FROM alpine:3.13.5 as builder
 
 RUN apk --update --no-cache add \
 	gcc \
@@ -10,7 +10,7 @@ RUN apk --update --no-cache add \
 	ca-certificates \
 	git \
 	openssh-client \
-	rsync 
+	rsync
 
 RUN apk --update --no-cache add --virtual \
 	.build-deps \
@@ -19,7 +19,10 @@ RUN apk --update --no-cache add --virtual \
 	libffi-dev \
 	openssl-dev \
 	build-base \
-	py3-pip
+	py3-pip \
+	rust \
+	cargo \
+	libxslt-dev
 
 COPY requirements.txt /requirements.txt 
 
@@ -28,7 +31,7 @@ RUN set -eux \
 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
 
-FROM alpine:3.12.1
+FROM alpine:3.13.5
 
 COPY --from=builder /usr/lib/python3.8/site-packages/ /usr/lib/python3.8/site-packages/
 COPY --from=builder /usr/bin/ansible /usr/bin/ansible
