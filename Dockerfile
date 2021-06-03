@@ -19,7 +19,9 @@ RUN apk --update --no-cache add --virtual \
 	libffi-dev \
 	openssl-dev \
 	build-base \
-	py3-pip
+	py3-pip \
+	rust \
+	cargo
 
 COPY requirements.txt /requirements.txt 
 
