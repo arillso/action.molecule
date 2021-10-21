@@ -1,4 +1,4 @@
 ---
 MD024:
   # Only check sibling headings
-  allow_different_nesting: true
+  allow_different_nesting: false
