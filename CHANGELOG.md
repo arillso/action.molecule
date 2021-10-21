@@ -8,8 +8,9 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Bump molecule-lxd from 0.2 to 0.3
-- Bumps molecule-containers from 0.2.1 to 1.0.0.
-
+- Bumps molecule-containers from 0.2.1 to 1.0.0
+- Bump crazy-max/ghaction-docker-meta from 3.3.0 to 3.5.0
+  
 ## 0.0.2
 
 ### Changed
