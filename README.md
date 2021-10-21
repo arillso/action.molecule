@@ -8,13 +8,15 @@ Github Action for testing ansible with Molecule.
 
 **Default** 'test'
 
-What command to pass to [molecule](https://molecule.readthedocs.io/en/latest/), for example `lint` or `syntax`.
+What command to pass to [molecule](https://molecule.readthedocs.io/en/latest/),
+for example `lint` or `syntax`.
 
 ### working_directory
 
 **Default** '${{ github.repository }}'
 
-Path to another directory in the repository, where molecule command will be issued from.
+Path to another directory in the repository,
+where molecule command will be issued from.
 
 ### scenario
 
