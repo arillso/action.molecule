@@ -2,3 +2,4 @@ exclude_paths:
   - .cache/
   - .github/
   - /github/workspace/action.yml
+  - README.md
