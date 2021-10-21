@@ -10,9 +10,8 @@ RUN apk --update --no-cache add \
 	ca-certificates \
 	git \
 	openssh-client \
-	rsync
-
-RUN apk --update --no-cache add --virtual \
+	rsync \
+	&& apk --update --no-cache add --virtual \
 	.build-deps \
 	sshpass \
 	python3-dev \
