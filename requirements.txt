@@ -2,13 +2,13 @@ ansible-core==2.11.1
 ansible-lint==5.0.11
 flake8==3.9.2 
 molecule-azure==0.5.0
-molecule-containers==0.2.1
+molecule-containers==1.0.0
 molecule-digitalocean==0.1
 molecule-docker==1.0.2
 molecule-ec2==0.3
 molecule-gce==0.2
 molecule-libvirt 
-molecule-lxd===0.2
+molecule-lxd===0.3
 molecule-openstack==0.3
 molecule-podman==0.3.0
 molecule-vagrant==0.6.3
