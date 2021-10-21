@@ -32,7 +32,7 @@ RUN set -eux \
 
 FROM alpine:3.14.2
 
-COPY --from=builder /usr/lib/python3.8/site-packages/ /usr/lib/python3.8/site-packages/
+COPY --from=builder /usr/lib/python3.9/site-packages/ /usr/lib/python3.9/site-packages/
 COPY --from=builder /usr/bin/ansible /usr/bin/ansible
 COPY --from=builder /usr/bin/ansible-connection /usr/bin/ansible-connection
 COPY --from=builder /usr/bin/flake8    /usr/bin/flake8
