@@ -1,6 +1,6 @@
 # Action: Test Ansible with Molecule
 
-Github Action for testing ansible with Molecule.
+GitHub Action for testing ansible with Molecule.
 
 ## Inputs
 
