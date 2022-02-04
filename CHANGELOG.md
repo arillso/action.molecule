@@ -7,7 +7,8 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- Bump molecule-docker from 1.0.2 to 1.1.
+- Bump molecule-docker from 1.0.2 to 1.1
+- Bump alpine from 3.14.2 to 3.15.0
 
 ## 0.0.3
 
