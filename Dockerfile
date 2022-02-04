@@ -66,7 +66,7 @@ RUN set -eux \
 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
 
 RUN ansible-galaxy collection install community.docker community.general \
-    && rm -f /usr/share/ansible/collections \
-    && ln -s /usr/share/ansible/collections /root/.ansible/collections
+    && mkdir -p /usr/share/ansible \
+    && ln -s /root/.ansible/collections/ /usr/share/ansible/collections
 
 CMD ["sh", "-c", "cd ${WORKING_DIRECTORY}; PY_COLORS=1 ANSIBLE_FORCE_COLOR=1 molecule ${COMMAND:-test} --scenario-name ${SCENARIO:-default}"]
