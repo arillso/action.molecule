@@ -7,9 +7,16 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 
-- Bump molecule-docker from 1.0.2 to 1.1
 - Bump alpine from 3.14.2 to 3.15.0
+- Bump ansible-lint from 5.2.1 to 5.3.2
+- Bump crazy-max/ghaction-docker-meta from 3.5.0 to 3.6.2
 - Bump github/super-linter from 4.8.1 to 4.8.7
+- Bump molecule-containers from 1.0.0 to 1.0.2
+- Bump molecule-docker from 1.0.2 to 1.1
+- Bump molecule-ec2 from 0.3 to 0.4
+- Bump molecule-gce from 0.2 to 0.3.1
+- Bump molecule-podman from 1.0.1 to 1.1.0
+- Bump molecule-vagrant from 0.6.3 to 1.0.0
 
 ## 0.0.3
 
