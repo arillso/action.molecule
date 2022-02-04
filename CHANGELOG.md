@@ -10,6 +10,7 @@ and [human-readable changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 
 - Bump alpine from 3.14.2 to 3.15.0
+- Bump ansible-core from 2.11.6 to 2.12.2
 - Bump ansible-lint from 5.2.1 to 5.3.2
 - Bump crazy-max/ghaction-docker-meta from 3.5.0 to 3.6.2
 - Bump github/super-linter from 4.8.1 to 4.8.7
