@@ -10,7 +10,7 @@ molecule-gce==0.2
 molecule-libvirt 
 molecule-lxd===0.3
 molecule-openstack==0.3
-molecule-podman==1.0.1
+molecule-podman==1.1.0
 molecule-vagrant==1.0.0
 molecule[docker,podman,windows,lint]==3.5.2
 testinfra==6.0.0
