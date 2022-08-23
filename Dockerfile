@@ -1,4 +1,4 @@
-FROM alpine:3.15.0 as builder
+FROM alpine:3.16.1 as builder
 
 RUN apk --update --no-cache add \
 	gcc \
@@ -11,7 +11,9 @@ RUN apk --update --no-cache add \
 	git \
 	openssh-client \
 	rsync \
-	&& apk --update --no-cache add --virtual \
+	curl
+
+RUN apk --update --no-cache add --virtual \
 	.build-deps \
 	sshpass \
 	python3-dev \
@@ -19,20 +21,22 @@ RUN apk --update --no-cache add \
 	openssl-dev \
 	build-base \
 	py3-pip \
+	py3-wheel \
 	rust \
 	cargo \
+	libxml2 \
 	libxslt-dev
 
-COPY requirements.txt /requirements.txt 
+COPY requirements.txt /requirements.txt
 
 RUN set -eux \
-	&& pip3 install --ignore-installed --no-cache-dir --upgrade -r /requirements.txt \
+	&& pip3 install --upgrade -r /requirements.txt \
 	&& find /usr/lib/ -name '__pycache__' -print0 | xargs -0 -n1 rm -rf \
 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
 
-FROM alpine:3.15.0
+FROM alpine:3.16.1 as production
 
-COPY --from=builder /usr/lib/python3.9/site-packages/ /usr/lib/python3.9/site-packages/
+COPY --from=builder /usr/lib/python3.10/site-packages/ /usr/lib/python3.10/site-packages/
 COPY --from=builder /usr/bin/ansible /usr/bin/ansible
 COPY --from=builder /usr/bin/ansible-connection /usr/bin/ansible-connection
 COPY --from=builder /usr/bin/flake8    /usr/bin/flake8
@@ -48,10 +52,12 @@ RUN set -eux \
 	gnupg \
 	jq \
 	openssh-client \
+	openssl \
 	python3 \
 	sshpass \
 	rsync \
-	docker \
+	libxml2 \
+	libxslt-dev \
 	&& ln -sf /usr/bin/python3 /usr/bin/python \
 	&& ln -sf ansible /usr/bin/ansible-config \
 	&& ln -sf ansible /usr/bin/ansible-console \
@@ -66,7 +72,7 @@ RUN set -eux \
 	&& find /usr/lib/ -name '*.pyc' -print0 | xargs -0 -n1 rm -rf
 
 RUN ansible-galaxy collection install community.docker community.general \
-    && mkdir -p /usr/share/ansible \
-    && ln -s /root/.ansible/collections/ /usr/share/ansible/collections
+	&& mkdir -p /usr/share/ansible \
+	&& ln -s /root/.ansible/collections/ /usr/share/ansible/collections
 
 CMD ["sh", "-c", "cd ${WORKING_DIRECTORY}; PY_COLORS=1 ANSIBLE_FORCE_COLOR=1 molecule ${COMMAND:-test} --scenario-name ${SCENARIO:-default}"]
