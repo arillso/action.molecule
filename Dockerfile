@@ -11,9 +11,8 @@ RUN apk --update --no-cache add \
 	git \
 	openssh-client \
 	rsync \
-	curl
-
-RUN apk --update --no-cache add --virtual \
+	curl \
+	&& apk --update --no-cache add --virtual \
 	.build-deps \
 	sshpass \
 	python3-dev \
