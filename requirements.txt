@@ -6,7 +6,7 @@ molecule-containers==2.0.0
 molecule-digitalocean==0.1
 molecule-docker==2.0.0
 molecule-ec2==0.4
-molecule-gce==0.3.1
+molecule-gce==1.0.0
 molecule-libvirt 
 molecule-lxd===0.3
 molecule-openstack==0.3
