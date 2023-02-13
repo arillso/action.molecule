@@ -1,5 +1,5 @@
 ansible-core==2.12.2
-ansible-lint==6.5.0
+ansible-lint==6.12.2
 flake8==5.0.4
 molecule-azure==0.5.0
 molecule-containers==2.0.0
